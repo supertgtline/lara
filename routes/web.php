@@ -16,6 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/','PagesController@index');
+Route::get('profile','PagesController@profile');
 
 Route::get('users',['uses'=>'UsersController@index']);
 Route::get('users/create',['uses'=>'UsersController@create']);
@@ -38,6 +39,10 @@ Route::post('users',['uses'=>'UsersController@store']);
 	];
 	return $users;
 });*/
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

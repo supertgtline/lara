@@ -12,4 +12,7 @@ class PagesController extends Controller
     	}
     	else return 'No view available';
     }
+    public function profile(){
+    	return view('pages.profile');
+    }
 }
