@@ -2,9 +2,11 @@
 
 namespace App\Http\ViewComposers;
 use Illuminate\View\View;
+use Auth;
 class ProfileComposer
 {
-	public function compose(View $view){
+	public function create(View $view){
 		$view->with('married',random_int(0, 1));
+		$view->with('test','say test');
 	}
 }

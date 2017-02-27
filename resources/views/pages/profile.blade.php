@@ -8,6 +8,7 @@
                 <div class="panel-heading">Profile</div>
                 <p>{{$married}}</p>
                 <p>{{$age}}</p>
+                <p>{{$test}}</p>
             </div>
         </div>
     </div>
