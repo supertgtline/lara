@@ -16,6 +16,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/','PagesController@index');
+
+
+Route::get('blade','PagesController@blade');
 Route::get('profile','PagesController@profile');
 
 Route::get('blade','PagesController@blade');
@@ -47,6 +50,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
