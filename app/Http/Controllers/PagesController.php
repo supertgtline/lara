@@ -19,7 +19,10 @@ class PagesController extends Controller
     	return view('pages.settings');
     }
     public function blade(){
-        return view('blade.bladetest');
+        $gender = 'ma333le';
+        $text = 'Hello There';
+        $age = 10;
+        return view('blade.bladetest',compact('gender','text'));
         
     }
 }
