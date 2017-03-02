@@ -34,7 +34,7 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($value);
     }
     public function getNameAttribute($value){
-        return "User logging :" .$value;
+        return "User :" .$value;
 
         return strtoupper($value);
 

@@ -12,7 +12,6 @@
                     You are logged in! {{Auth::user()->email}}
                 </div>
                 <h3>{{$age}}</h3>
-                {{$married}}
 
                 <h4>{{$auth->name}}</h4>
             </div>

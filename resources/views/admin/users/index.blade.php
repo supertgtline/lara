@@ -1,8 +1,21 @@
-@foreach($users as $user)
+@extends('layouts.app')
 
-	<li>{!! $user['first_name'] !!} - {!! $user['last_name']  !!} from {!! $user['location'] !!}</li>
+@section('content')
 
+<div class="col-md-6 col-md-offset-3">
+<ul class = "list-group">
+@forelse($users as $user)
+<li class = "list-group-item" style="margin-top: 20px">
+		
+		<span>{{$user->name}}</span>
+		<span class="pull-right clearfix">Joined {{$user->created_at->diffForHumans()}}
+	<button class="btn btn-xs btn-primary">Follow</button>
+		</span>
+		
+	</li>
+@empty
+<p>No users available </p>
+@endforelse
 
-
-@endforeach
-<li style="list-style: none;">We will get marry together </li>
+{{$users->links()}}
+@endsection

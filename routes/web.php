@@ -19,14 +19,13 @@ Route::get('/','PagesController@index');
 
 
 Route::get('blade','PagesController@blade');
-Route::get('profile','PagesController@profile');
 
 Route::get('blade','PagesController@blade');
 
-Route::get('settings','PagesController@settings');
 
-Route::get('users',['uses'=>'UsersController@index']);
+
 Route::get('users/create',['uses'=>'UsersController@create']);
+
 Route::post('users',['uses'=>'UsersController@store']);
 /*Route::get('users',function(){
 	$users = [
@@ -49,4 +48,11 @@ Route::post('users',['uses'=>'UsersController@store']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group(['middleware'=>'authenticated'],function()
+{
+	Route::get('profile','PagesController@profile');
+	Route::get('settings','PagesController@settings');
+	Route::get('users','UsersController@index');
+});
 
